@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: lightgray;
+}
+
+.green {
+    background-color: #3CB371;
+    color: white;
+    font-size: 4em;
+}
+.container {
+    width: auto;
+}
+
+.card-body {
+    float: right;
+    background-color: #3CB371;
+}
