@@ -4,10 +4,12 @@ namespace App\Entity;
 
 use App\Repository\AccountRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: AccountRepository::class)]
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class Account implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -30,7 +32,7 @@ class Account implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToOne(mappedBy: 'account', cascade: ['persist', 'remove'])]
     private ?User $grantedUser = null;
 
-    #[ORM\OneToOne(mappedBy: 'Account', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(mappedBy: 'account', cascade: ['persist', 'remove'])]
     private ?Community $community = null;
 
     public function getId(): ?int
