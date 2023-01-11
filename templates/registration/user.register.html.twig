@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+	<h1>Register</h1>
+	{% for user, messages in app.flashes %}
+		{% for message in messages %}
+			<div class="alert alert-{{ user }}">
+				{{ message }}
+			</div>
+		{% endfor %}
+	{% endfor %}
+	{{ form_start(registrationForm) }}
+	{{ form_row(registrationForm.email) }}
+	{{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+
+	<button type="submit" class="btn">Register</button>
+	{{ form_end(registrationForm) }}
+{% endblock %}
