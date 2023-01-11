@@ -16,6 +16,15 @@ Encore
 
     .copyFiles({
         from: './assets/images',
+
+        // optional target path, relative to the output dir
+        // to: 'images/[path][name].[ext]',
+
+        // if versioning is enabled, add the file hash too
+        to: 'images/[path][name].[hash:8].[ext]',
+
+        // only copy files matching this pattern
+        // pattern: /\.(png|jpg|jpeg)$/
     })
 
     /*
@@ -60,7 +69,7 @@ Encore
         config.corejs = '3.23';
     })
 
-    //enables Sass / SCSS support
+    // enables Sass/SCSS support
     .enableSassLoader()
 
     // uncomment if you use TypeScript
@@ -75,6 +84,6 @@ Encore
 
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
-    ;
+;
 
 module.exports = Encore.getWebpackConfig();
