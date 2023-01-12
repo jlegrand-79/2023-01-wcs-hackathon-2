@@ -12,22 +12,22 @@ class AccountFixtures extends Fixture
         [
             'email' => 'user@mail.com',
             'roles' => ['ROLE_USER'],
-            'password' => 'Aa_12345',
+            'password' => '$2y$13$1HlERTKPKFttne.VtR0f9ephn9ayGb2yYPKjoOmPAs5xnsDWBbQyC',
         ],
         [
             'email' => 'granted@mail.com',
             'roles' => ['ROLE_GRANTED_USER'],
-            'password' => 'Aa_12345',
+            'password' => '$2y$13$bKSGqTnieJbvFWcxWRu0UORhgvgJnfhNk8cPwpu2YRrr12d/pwn/O',
         ],
         [
             'email' => 'community@mail.com',
             'roles' => ['ROLE_COMMUNITY'],
-            'password' => 'Aa_12345',
+            'password' => '$2y$13$58em3OHn7RhrPcLizC6i1.DwXjhXZRyv1xN/Po320XG86WNJOQfya',
         ],
         [
             'email' => 'admmin@mail.com',
             'roles' => ['ROLE_ADMIN'],
-            'password' => 'Aa_12345',
+            'password' => '$2y$13$OeErXP9wgcq0sL3F535FS.OoAlHvDk/a97RfsfK62AR7Zn7I9BlIS',
         ],
     ];
 
