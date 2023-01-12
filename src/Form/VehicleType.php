@@ -15,15 +15,14 @@ class VehicleType extends AbstractType
     {
         $builder
             // ->add('miles')
-            // ->add('condition')
+            // ->add('status')
             ->add('model', EntityType::class, [
                 'class' => CarModel::class,
                 'choice_label' => 'description',
                 'multiple' => false,
                 // 'expanded' => true,
                 'by_reference' => false,
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
