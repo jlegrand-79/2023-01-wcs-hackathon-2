@@ -31,10 +31,11 @@ class LoginController extends AbstractController
     public function redirectAfterLogin(): Response
     {
         if (in_array('ROLE_USER', $this->getUser()->getRoles())) {
-            return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_form_user', [], Response::HTTP_SEE_OTHER);
         }
         if (in_array('ROLE_COMMUNITY', $this->getUser()->getRoles())) {
-            return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
+            dd($this->getUser()->getRoles());
+            return $this->redirectToRoute('app_form_community', [], Response::HTTP_SEE_OTHER);
         }
         return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
     }

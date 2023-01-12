@@ -1,11 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Community{% endblock %}
+{% block title %}New Community
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Community</h1>
-
-    {{ include('community/_form.html.twig') }}
-
-    <a href="{{ path('app_community_index') }}">back to list</a>
+	<main class="mainsection">
+		<div class="mainForm">
+			<h1 class="d-flex justify-content-center mt-3 mb-3">Create new Community</h1>
+			<div class="d-flex justify-content-center">
+				{{ include('community/_form.html.twig') }}
+			</div>
+		</div>
+	</main>
+	<a class="lien text-dark ms-2 text-decoration-none" href="{{ path('app_car_model_index') }}">back to list</a>
 {% endblock %}
