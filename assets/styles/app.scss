@@ -1,5 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
     background-color: lightgray;
 }
@@ -9,6 +11,7 @@ body {
     color: white;
     font-size: 4em;
 }
+
 .container {
     width: auto;
 }
@@ -16,4 +19,39 @@ body {
 .card-body {
     float: right;
     background-color: #3CB371;
+}
+
+
+/******************Css form Crud***********************/
+
+.mainForm {
+    color: #000000;
+    font-weight: bold;
+    font: 400 16px Jost;
+}
+
+.lienFont {
+    font: 600 20px Jost;
+}
+
+button {
+    width: 100px;
+    color: $light;
+    align-self: center;
+    text-align: center;
+    background-color: $black;
+    border: 3px;
+    justify-content: center;
+}
+
+input {
+    width: 50vw;
+    height: 30px;
+    justify-content: center;
+}
+
+textarea {
+    width: 50vw;
+    justify-content: center;
+
 }
