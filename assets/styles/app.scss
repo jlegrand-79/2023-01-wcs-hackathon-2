@@ -6,6 +6,11 @@ body {
     background-color: lightgray;
 }
 
+h1 {
+    font: 500 50px Jost;
+
+}
+
 .green {
     background-color: #3CB371;
     color: white;
@@ -29,6 +34,10 @@ body {
 
 /******************Css form Crud***********************/
 
+label {
+    font: 500 20px Jost;
+}
+
 .mainForm {
     color: #000000;
     font-weight: bold;
@@ -36,7 +45,7 @@ body {
 }
 
 .lienFont {
-    font: 600 20px Jost;
+    font: 500 20px Jost;
 }
 
 button {
@@ -47,6 +56,7 @@ button {
     background-color: $black;
     border: 3px;
     justify-content: center;
+    font: 500 20px Jost;
 }
 
 input {
