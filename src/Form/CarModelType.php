@@ -11,8 +11,6 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-
-
 class CarModelType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
