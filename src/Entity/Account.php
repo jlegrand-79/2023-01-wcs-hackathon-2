@@ -35,6 +35,9 @@ class Account implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToOne(mappedBy: 'account', cascade: ['persist', 'remove'])]
     private ?Community $community = null;
 
+    #[ORM\Column]
+    private ?bool $isCommunity = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -135,6 +138,18 @@ class Account implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         $this->community = $community;
+
+        return $this;
+    }
+
+    public function isIsCommunity(): ?bool
+    {
+        return $this->isCommunity;
+    }
+
+    public function setIsCommunity(bool $isCommunity): self
+    {
+        $this->isCommunity = $isCommunity;
 
         return $this;
     }

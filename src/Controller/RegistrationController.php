@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Account;
+use App\Entity\Community;
 use App\Form\RegistrationFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,14 +30,14 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $user->setRoles(['ROLE_USER']);
+            $user->setRoles('ROLE_USER');
 
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email
             $this->addFlash('success', "Your account has been successfully created.");
 
-            return $this->redirectToRoute('app_login_redirect');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('registration/user.register.html.twig', [
@@ -59,7 +60,7 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $community->setRoles(['ROLE_COMMUNITY']);
+            $community->setRoles('ROLE_COMMUNITY');
 
             $entityManager->persist($community);
             $entityManager->flush();

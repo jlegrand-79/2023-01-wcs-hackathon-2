@@ -15,6 +15,7 @@ class CommunityFormType extends AbstractType
             ->add('name')
             ->add('city')
             ->add('postalCode')
+            ->add('account', null, ['choice_label' => 'email'])
         ;
     }
 
