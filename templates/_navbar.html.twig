@@ -10,12 +10,12 @@
 				<img src="{{ asset('build/images/person-fill.516b8bd0.svg') }}" alt="Autonoom-logo" width="80" height="80">
 			</a>
 			{% if app.user %}
-				<div class="d-flex fs-3 me-2">
-					<a href="{{ path('app_logout') }}">Logout</a>
+				<div class="d-flex fs-3 ms-3">
+					<a class="text-decoration-none text-dark" href="{{ path('app_logout') }}">Logout</a>
 				</div>
 			{% else %}
-				<div class="d-flex fs-3 me-2">
-					<a href="{{ path('app_login') }}">Login</a>
+				<div class="d-flex fs-3 ms-3">
+					<a class="text-decoration-none text-dark" href="{{ path('app_login') }}">Login</a>
 				</div>
 			{% endif %}
 		</div>

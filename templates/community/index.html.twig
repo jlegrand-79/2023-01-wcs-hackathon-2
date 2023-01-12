@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Community index
+
 {% endblock %}
 
 {% block body %}
@@ -24,8 +25,8 @@
 					<td>{{ community.city }}</td>
 					<td>{{ community.postalCode }}</td>
 					<td>
-						<a href="{{ path('app_community_show', {'id': community.id}) }}">show</a>
-						<a href="{{ path('app_community_edit', {'id': community.id}) }}">edit</a>
+						<a class="text-dark" href="{{ path('app_community_show', {'id': community.id}) }}">show</a>
+						<a class="text-dark" href="{{ path('app_community_edit', {'id': community.id}) }}">edit</a>
 					</td>
 				</tr>
 			{% else %}
@@ -36,5 +37,5 @@
 		</tbody>
 	</table>
 
-	<a class="lienFont d-flex justify-content-center text-decoration-none text-dark" href="{{ path('app_car_model_new') }}">Create new</a>
+	<a class="lienFont d-flex justify-content-center text-decoration-none text-dark mb-2" href="{{ path('app_community_new') }}">Create new</a>
 {% endblock %}

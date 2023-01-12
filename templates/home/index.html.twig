@@ -5,21 +5,38 @@
 	<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="{{ asset('build/images/voiture.jpg') }}" class="d-block w-100" width="1280" height="800" alt="voiture">
+				<img src="{{ asset('build/images/traveller.png') }}" class="d-block w-100" alt="utilitaire">
 			</div>
 			<div class="carousel-item">
-				<img src="{{ asset('build/images/utilitaire.png') }}" class="d-block w-100" width="1280" height="800" alt="utilitaire">
+				<img src="{{ asset('build/images/mg5.png') }}" class="d-block w-100" alt="voiture citadine">
 			</div>
 			<div class="carousel-item">
-				<img src="..." class="d-block w-100" alt="...">
+				<img src="{{ asset('build/images/twizy-45.png') }}" class="d-block w-100" alt="voiture sans permis">
 			</div>
 		</div>
 	</div>
-	<h2>Register</h2>
-	<p>
-		<a href="{{ path('app_register_user') }}">User</a>
-	</p>
-	<p>
-		<a href="{{ path('app_register_community') }}">Community</a>
-	</p>
-{% endblock %}
+	<div class="bg-dark d-flex justify-content-center">
+		<div class="col-10 bg-dark text-white welcome-size text-center m-5">
+			Autnoom is a vehicles booking service for low-wage people. This service can provide you the autonomy you need.
+		</div>
+	</div>
+	<div class="green d-flex justify-content-center">I AM INTERESTED</div>
+	<div class="bg-dark d-flex">
+		<div class="container d-flex bg-light rounded-5 m-3 ms-5 p-0">
+			<div class="d-flex flex-column m-0 p-0">
+				<a class="d-flex justify-content-center m-0 p-0" href="{{ path('app_user_register') }}">
+					<img src="{{ asset('build/images/person-fill-green.png') }}" alt="Autonoom-logo" width="300" height="300" class="m-0 p-0">
+				</a>
+				<div class="col-10 welcome-size m-0 text-center ps-5">Subscription for drivers</div>
+			</div>
+		</div>
+		<div class="container d-flex bg-light rounded-5 m-3 ms-3">
+			<div class="d-flex flex-column m-0 p-0">
+				<a class="d-flex justify-content-center m-0 p-0" href="{{ path('app_community_register') }}">
+					<img src="{{ asset('build/images/houses-fill-green.png') }}" alt="Autonoom-logo" width="300" height="300" class="m-0 p-0">
+				</a>
+				<div class="col-11 welcome-size m-0 text-center ps-5">Subscription for collectivity</div>
+			</div>
+		</div>
+	</div>
+</div>{% endblock %}
