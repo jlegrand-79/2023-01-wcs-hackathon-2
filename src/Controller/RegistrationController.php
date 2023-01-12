@@ -14,7 +14,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class RegistrationController extends AbstractController
 {
-    #[Route('/user/register', name: 'app_user_register')]
+    #[Route('/register/user', name: 'app_register_user')]
     public function userRegister(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new Account();
@@ -36,7 +36,7 @@ class RegistrationController extends AbstractController
             // do anything else you need here, like send an email
             $this->addFlash('success', "Your account has been successfully created.");
 
-            return $this->redirectToRoute('app_user_register');
+            return $this->redirectToRoute('app_login_redirect');
         }
 
         return $this->render('registration/user.register.html.twig', [
@@ -44,7 +44,7 @@ class RegistrationController extends AbstractController
         ]);
     }
 
-    #[Route('/community/register', name: 'app_community_register')]
+    #[Route('/register/community', name: 'app_register_community')]
     public function communityRegister(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $community = new Account();
@@ -66,7 +66,7 @@ class RegistrationController extends AbstractController
             // do anything else you need here, like send an email
 
             $this->addFlash('success', "Your account has been successfully created.");
-            return $this->redirectToRoute('app_community_register');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('registration/community.register.html.twig', [

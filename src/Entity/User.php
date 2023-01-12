@@ -23,9 +23,6 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $lastName = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $birthDate = null;
-
     #[ORM\Column(length: 255)]
     private ?string $address = null;
 
@@ -50,6 +47,9 @@ class User
 
     #[ORM\OneToMany(mappedBy: 'borrower', targetEntity: Reservation::class, orphanRemoval: true)]
     private Collection $reservations;
+
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $birthDate = null;
 
     public function __construct()
     {
