@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CarModel index
+{% endblock %}
+
+{% block body %}
+	<h1>CarModel index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Brand</th>
+				<th>Year</th>
+				<th>Energy</th>
+				<th>Model</th>
+				<th>Description</th>
+				<th>Picture</th>
+				<th>Category</th>
+				<th>Seats</th>
+				<th>BootVolume</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for car_model in car_models %}
+				<tr>
+					<td>{{ car_model.id }}</td>
+					<td>{{ car_model.brand }}</td>
+					<td>{{ car_model.year }}</td>
+					<td>{{ car_model.energy }}</td>
+					<td>{{ car_model.model }}</td>
+					<td>{{ car_model.description }}</td>
+					<td>{{ car_model.picture }}</td>
+					<td>{{ car_model.category }}</td>
+					<td>{{ car_model.seats }}</td>
+					<td>{{ car_model.bootVolume }}</td>
+					<td>
+						<a href="{{ path('app_car_model_show', {'id': car_model.id}) }}">show</a>
+						<a href="{{ path('app_car_model_edit', {'id': car_model.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="11">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a class="lienFont d-flex justify-content-center text-decoration-none text-dark" href="{{ path('app_car_model_new') }}">Create new</a>
+
+{% endblock %}
