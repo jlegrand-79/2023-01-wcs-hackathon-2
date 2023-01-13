@@ -34,7 +34,7 @@ h1 {
 
 /******************Css form Crud***********************/
 
-label {
+.label-crud {
     font: 500 20px Jost;
 }
 
@@ -75,4 +75,15 @@ textarea {
 
 .footer-size {
     font-size: 2em;
+}
+
+// registration form
+
+.test-size {
+    font-size: 2em;
+}
+
+.registration-height {
+    height: 600px;
+    background-color: #3CB371;
 }
