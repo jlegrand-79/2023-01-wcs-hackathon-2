@@ -14,9 +14,7 @@ class CommunityFormType extends AbstractType
         $builder
             ->add('name')
             ->add('city')
-            ->add('postalCode')
-            ->add('account', null, ['choice_label' => 'email'])
-        ;
+            ->add('postalCode') ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

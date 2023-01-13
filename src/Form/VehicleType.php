@@ -20,7 +20,6 @@ class VehicleType extends AbstractType
                 'class' => CarModel::class,
                 'choice_label' => 'description',
                 'multiple' => false,
-                // 'expanded' => true,
                 'by_reference' => false,
             ]);
     }

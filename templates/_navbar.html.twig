@@ -6,14 +6,21 @@
 	</div>
 	<div class="col d-flex justify-content-end me-2">
 		<div class="d-flex flex-column justify-content-end">
-			<a class="d-flex ms-2" href="{{ path('app_home') }}">
-				<img src="{{ asset('build/images/person-fill.516b8bd0.svg') }}" alt="Autonoom-logo" width="80" height="80">
-			</a>
 			{% if app.user %}
+				<div class="d-flex ms-2">
+					<a href="{{ path('app_logout') }}">
+						<img src="{{ asset('build/images/person-fill.516b8bd0.svg') }}" alt="Profile" width="80" height="80">
+					</a>
+				</div>
 				<div class="d-flex fs-3 ms-3">
 					<a class="text-decoration-none text-dark" href="{{ path('app_logout') }}">Logout</a>
 				</div>
 			{% else %}
+				<div class="d-flex ms-2">
+					<a href="{{ path('app_login') }}">
+						<img src="{{ asset('build/images/person-fill.516b8bd0.svg') }}" alt="Profile" width="80" height="80">
+					</a>
+				</div>
 				<div class="d-flex fs-3 ms-3">
 					<a class="text-decoration-none text-dark" href="{{ path('app_login') }}">Login</a>
 				</div>

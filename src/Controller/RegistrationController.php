@@ -30,7 +30,8 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $user->setRoles('ROLE_USER');
+            $user->setRoles(['ROLE_USER']);
+            $user->setIsCommunity(0);
 
             $entityManager->persist($user);
             $entityManager->flush();
@@ -60,7 +61,8 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $community->setRoles('ROLE_COMMUNITY');
+            $community->setRoles(['ROLE_COMMUNITY']);
+            $community->setIsCommunity(1);
 
             $entityManager->persist($community);
             $entityManager->flush();
