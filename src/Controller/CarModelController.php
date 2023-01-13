@@ -36,7 +36,7 @@ class CarModelController extends AbstractController
             return $this->redirectToRoute('app_car_model_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('car_model/new.html.twig', [
+        return $this->render('car_model/new.html.twig', [
             'car_model' => $carModel,
             'form' => $form,
         ]);
@@ -62,7 +62,7 @@ class CarModelController extends AbstractController
             return $this->redirectToRoute('app_car_model_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('car_model/edit.html.twig', [
+        return $this->render('car_model/edit.html.twig', [
             'car_model' => $carModel,
             'form' => $form,
         ]);
