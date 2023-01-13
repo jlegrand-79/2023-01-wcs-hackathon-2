@@ -44,7 +44,7 @@ class RegistrationController extends AbstractController
         ]);
     }
 
-    #[Route('/community/register', name: 'app_community_register')]
+    #[Route('/register/community', name: 'app_register_community')]
     public function communityRegister(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $community = new Account();
