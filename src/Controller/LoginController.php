@@ -29,21 +29,18 @@ class LoginController extends AbstractController
 
     #[Route('/login/redirect', name: 'app_login_redirect')]
     #[IsGranted('ROLE_USER')]
-    
+
     public function redirectAfterLogin(): Response
     {
+        if (in_array('ROLE_ADMIN', $this->getUser()->getRoles())) {
+            return $this->redirectToRoute('app_car_model_index', [], Response::HTTP_SEE_OTHER);
+        }
         if ('1' == $this->getUser()->isIsCommunity()) {
             return $this->redirectToRoute('app_form_community', [], Response::HTTP_SEE_OTHER);
         }
         if ('0' == $this->getUser()->isIsCommunity()) {
             return $this->redirectToRoute('app_form_user', [], Response::HTTP_SEE_OTHER);
         }
-        // if (in_array('ROLE_USER', $this->getUser()->getRoles())) {
-        //     return $this->redirectToRoute('app_form_user', [], Response::HTTP_SEE_OTHER);
-        // }
-        // if (in_array('ROLE_COMMUNITY', $this->getUser()->getRoles())) {
-        //     return $this->redirectToRoute('app_form_community', [], Response::HTTP_SEE_OTHER);
-        // }
         return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
     }
 }

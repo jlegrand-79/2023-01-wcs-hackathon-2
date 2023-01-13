@@ -1,12 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}CarModel{% endblock %}
+{% block title %}Car Model{% endblock %}
 
 {% block body %}
-    <h1>CarModel</h1>
+    <h1>Car Model</h1>
 
     <table class="table">
         <tbody>
+        	<div><img src="{{ asset('build/images/' ~ car_model.picture) }}" alt="{{ car_model.description }}">
+	</div>
+
             <tr>
                 <th>Id</th>
                 <td>{{ car_model.id }}</td>
