@@ -19,7 +19,7 @@ class Vehicle
     private ?int $miles = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $condition = null;
+    private ?string $status = null;
 
     #[ORM\ManyToOne(inversedBy: 'vehicles')]
     #[ORM\JoinColumn(nullable: false)]
@@ -54,14 +54,14 @@ class Vehicle
         return $this;
     }
 
-    public function getCondition(): ?string
+    public function getStatus(): ?string
     {
-        return $this->condition;
+        return $this->status;
     }
 
-    public function setCondition(string $condition): self
+    public function setStatus(string $status): self
     {
-        $this->condition = $condition;
+        $this->status = $status;
 
         return $this;
     }

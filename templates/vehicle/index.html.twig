@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My fleet
+{% endblock %}
+
+{% block body %}
+	<h1>My fleet</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Picture</th>
+				<th>Brand</th>
+				<th>Year</th>
+				<th>Energy</th>
+				<th>Model</th>
+				<th>Category</th>
+				<th>Description</th>
+				<th>Seats</th>
+				<th>Boot Volume</th>
+				<th>Miles</th>
+				<th>Condition</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for vehicle in vehicles %}
+				<tr>
+					<td>{{ vehicle.id }}</td>
+					<td><img src="{{ asset('build/images/' ~ vehicle.model.picture) }}" alt="{{ vehicle.model.description }}" height="50"></td>
+					<td>{{ vehicle.model.brand }}</td>
+					<td>{{ vehicle.model.year }}</td>
+					<td>{{ vehicle.model.energy }}</td>
+					<td>{{ vehicle.model.model }}</td>
+					<td>{{ vehicle.model.category }}</td>
+					<td>{{ vehicle.model.description }}</td>
+					<td>{{ vehicle.model.seats }}</td>
+					<td>{{ vehicle.model.bootVolume }}</td>
+					<td>{{ vehicle.miles }}</td>
+					<td>{{ vehicle.status }}</td>
+					<td>
+						<a href="{{ path('app_vehicle_show', {'id': vehicle.id}) }}">show</a>
+
+						{# Pour éditer un véhicule, revoir le form et ou le builder pour 
+												ne pouvoir éditer que le kilométrage et le status #}
+						{# <a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">edit</a> #}
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="4">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('app_vehicle_new') }}">Create new</a>
+{% endblock %}

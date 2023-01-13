@@ -31,9 +31,8 @@ class UserFormController extends AbstractController
             return $this->redirectToRoute('app_home');
         }
 
-        return $this->renderForm('user_form/index.html.twig', [
+        return $this->render('user_form/index.html.twig', [
             'form' => $form
         ]);
     }
 }
-
